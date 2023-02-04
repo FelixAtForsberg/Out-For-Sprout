@@ -11,10 +11,13 @@ public class UIManager : MonoBehaviour
 
     private bool isGameOver = false;
     
+    void Awake(){
+        Time.timeScale = 0; 
+    }
     void Start()
     {
         gameOverPanel.SetActive(false); 
-        Time.timeScale = 0;       
+             
     }
 
     // Update is called once per frame
