@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -32,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        UpdateMovingDirection();
+    }
+
+    private void UpdateMovingDirection()
     {
         var direction = gameActions.Player.Move.ReadValue<Vector2>();
         if (direction.magnitude > 0)
