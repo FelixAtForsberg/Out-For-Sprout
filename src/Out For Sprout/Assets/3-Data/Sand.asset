@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
-  spawnLength: 10
+  spawnLength: 25
   obstacleSettings:
   - ObjectToSpawn: {fileID: 8504237083870200452, guid: 4947aaf3e744b7f4891138070c77a7a1, type: 3}
-    nrOfSpawns: 6
-  - ObjectToSpawn: {fileID: 8947228262268775340, guid: fbb99df8fc056174eb0b948129abef4c, type: 3}
     nrOfSpawns: 4
-  - ObjectToSpawn: {fileID: 7900933459901592044, guid: 71a125e76bfb4ff49bd4eed81910e351, type: 3}
+  - ObjectToSpawn: {fileID: 8947228262268775340, guid: fbb99df8fc056174eb0b948129abef4c, type: 3}
     nrOfSpawns: 3
+  - ObjectToSpawn: {fileID: 7900933459901592044, guid: 71a125e76bfb4ff49bd4eed81910e351, type: 3}
+    nrOfSpawns: 2
+  - ObjectToSpawn: {fileID: 6333241140219891147, guid: 03f35f81a6a1cab468cdca7f0d142481, type: 3}
+    nrOfSpawns: 5
   backgroundTile: {fileID: 11400000, guid: 148de93f174a1864cafa87d6d983a73e, type: 2}
