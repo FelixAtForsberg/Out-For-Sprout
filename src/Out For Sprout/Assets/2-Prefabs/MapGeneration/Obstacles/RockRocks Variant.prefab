@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2968310640491277405, guid: 329404dc19e3d2548b9d27abbe003e74, type: 3}
       propertyPath: m_Name
-      value: RockRocks
+      value: RockRocks Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6119421110759674989, guid: 329404dc19e3d2548b9d27abbe003e74, type: 3}
       propertyPath: m_RootOrder

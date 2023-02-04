@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520595216245785852, guid: 332bef105a312854b8130598ddc30c21, type: 3}
       propertyPath: m_Name
-      value: StoneRocks
+      value: StoneRocks Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332bef105a312854b8130598ddc30c21, type: 3}

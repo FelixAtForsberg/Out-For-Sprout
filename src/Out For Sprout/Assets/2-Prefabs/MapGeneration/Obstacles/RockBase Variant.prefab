@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockBase Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2155707092157983700, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155707092157983700, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6933186026906588132, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
       propertyPath: m_RootOrder
       value: 0
