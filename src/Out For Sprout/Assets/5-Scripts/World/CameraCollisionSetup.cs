@@ -27,13 +27,13 @@ public class CameraCollisionSetup : MonoBehaviour
     
     private void SetLeftCollider(float viewHalfHeight, float viewHalfWidth)
     {
-        leftCollision.transform.position = new Vector3(-viewHalfWidth - colliderHalfSize, 0, 0);
+        leftCollision.transform.localPosition = new Vector3(-viewHalfWidth - colliderHalfSize, 0, 0);
         leftCollision.transform.localScale = new Vector3(1, viewHalfHeight * 2, 1);
     }
     
     private void SetRightCollider(float viewHalfHeight, float viewHalfWidth)
     {
-        rightCollision.transform.position = new Vector3(viewHalfWidth + colliderHalfSize, 0, 0);
+        rightCollision.transform.localPosition = new Vector3(viewHalfWidth + colliderHalfSize, 0, 0);
         rightCollision.transform.localScale = new Vector3(1, viewHalfHeight * 2, 1);
     }
 }
