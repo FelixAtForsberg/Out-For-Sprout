@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
   m_Name: Lava
   m_EditorClassIdentifier: 
-  spawnLength: 10
+  spawnLength: 25
   obstacleSettings:
-  - ObjectToSpawn: {fileID: 8981158750653315444, guid: ecdff87e4bcd7c046a9a59c8f50315a0, type: 3}
-    nrOfSpawns: 6
+  - ObjectToSpawn: {fileID: 8753440437304191651, guid: 749a71eaef1204f418a78b77d6656c0c, type: 3}
+    nrOfSpawns: 3
+  - ObjectToSpawn: {fileID: 5571422680404953583, guid: d9432206479a9204489a5f5de38d667f, type: 3}
+    nrOfSpawns: 4
+  - ObjectToSpawn: {fileID: 4524463163620853041, guid: c1c2e8d4b8112e34392f0bd2ebd3228b, type: 3}
+    nrOfSpawns: 5
   backgroundTile: {fileID: 11400000, guid: 85936abbb51a52d4fb89bd7373282990, type: 2}

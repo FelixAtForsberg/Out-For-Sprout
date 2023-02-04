@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLength: 10
   obstacleSettings:
-  - ObjectToSpawn: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
-    nrOfSpawns: 10
+  - ObjectToSpawn: {fileID: 8504237083870200452, guid: 4947aaf3e744b7f4891138070c77a7a1, type: 3}
+    nrOfSpawns: 6
+  - ObjectToSpawn: {fileID: 8947228262268775340, guid: fbb99df8fc056174eb0b948129abef4c, type: 3}
+    nrOfSpawns: 4
+  - ObjectToSpawn: {fileID: 7900933459901592044, guid: 71a125e76bfb4ff49bd4eed81910e351, type: 3}
+    nrOfSpawns: 3
   backgroundTile: {fileID: 11400000, guid: 148de93f174a1864cafa87d6d983a73e, type: 2}

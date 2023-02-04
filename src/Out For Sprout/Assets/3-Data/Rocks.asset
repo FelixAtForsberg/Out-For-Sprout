@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
   m_Name: Rocks
   m_EditorClassIdentifier: 
-  spawnLength: 10
+  spawnLength: 35
   obstacleSettings:
-  - ObjectToSpawn: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
+  - ObjectToSpawn: {fileID: 4965786903964286692, guid: 7892e4f3c3324af4f8b9912830d50aa6, type: 3}
+    nrOfSpawns: 4
+  - ObjectToSpawn: {fileID: 8882405888798409806, guid: e5ca04d48cbccd94b8adb5349629c7cd, type: 3}
     nrOfSpawns: 5
+  - ObjectToSpawn: {fileID: 8558939597172221803, guid: 812739e7dbb299c439e7bef176edcb43, type: 3}
+    nrOfSpawns: 4
   backgroundTile: {fileID: 11400000, guid: b2199932c1e11664fb13cf7ff6b09ca5, type: 2}
