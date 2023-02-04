@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     
     void Awake(){
         Time.timeScale = 0; 
+        
     }
     void Start()
     {
@@ -25,7 +26,7 @@ public class UIManager : MonoBehaviour
 
 
     void SetGameOver(){
-        isGameOver = true;
+        
         StartCoroutine(GameOverSequence());
     }
 
