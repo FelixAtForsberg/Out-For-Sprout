@@ -5,10 +5,11 @@ using UnityEngine;
 public class SpeedPickupTrigger : PickupTrigger
 {
     public float speedBonus;
+    public float bonusTime;
     public override void TriggerPickup(Player player)
     {
         var playerMovement = player.GetComponent<PlayerMovement>();
-        playerMovement.AddSpeedupBuff();
+        playerMovement.AddSpeedupBuff(speedBonus, bonusTime);
         base.TriggerPickup(player);
     }
 }

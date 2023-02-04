@@ -95,8 +95,8 @@ public class PlayerMovement : MonoBehaviour
         return totalSpeedBonus;
     }
 
-    public void AddSpeedupBuff()
+    public void AddSpeedupBuff(float speedBonus, float fadeoutTime)
     {
-        activeBuffs.Add(new SpeedBuff(10, 2));
+        activeBuffs.Add(new SpeedBuff(fadeoutTime, speedBonus));
     }
 }

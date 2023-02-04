@@ -95,4 +95,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnTrigger: 1
-  speedBonus: 2
+  speedBonus: 5
+  bonusTime: 5
