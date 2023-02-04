@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private GameActions gameActions;
     private Rigidbody2D rigidbody;
+    private Vector2 lastDirection;
 
     public float baseVelocity;
 
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rigidbody.velocity = Vector2.down * baseVelocity;
+        lastDirection = rigidbody.velocity.normalized;
     }
 
     private void OnEnable()
@@ -37,10 +39,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMovingDirection()
     {
-        var direction = gameActions.Player.Move.ReadValue<Vector2>();
-        if (direction.magnitude > 0)
+        var inputDirection = gameActions.Player.Move.ReadValue<Vector2>();
+        var newVelocity = Mathf.Max(rigidbody.velocity.magnitude, baseVelocity);
+
+        var finalDirection = lastDirection;
+        if (inputDirection.magnitude > 0)
         {
-            rigidbody.velocity = rigidbody.velocity.magnitude * direction.normalized;
+            finalDirection = inputDirection.normalized;
         }
+        
+        rigidbody.velocity = newVelocity * finalDirection;
+        lastDirection = rigidbody.velocity.normalized;
     }
 }
