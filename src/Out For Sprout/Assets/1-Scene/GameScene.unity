@@ -342,6 +342,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &488631631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3208422814181162335, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
+  m_PrefabInstance: {fileID: 1717714698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &672511097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,6 +398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 488631631}
     - target: {fileID: 6452290401743854626, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -1044,7 +1053,7 @@ PrefabInstance:
     - target: {fileID: 52817724452773985, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1229012462}
+      objectReference: {fileID: 0}
     - target: {fileID: 3208422814181162335, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
       propertyPath: m_Name
       value: GameOverOverlayCanvas
