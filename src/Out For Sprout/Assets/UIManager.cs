@@ -11,37 +11,22 @@ public class UIManager : MonoBehaviour
 
     private bool isGameOver = false;
     
+    void Awake(){
+        Time.timeScale = 0; 
+    }
     void Start()
     {
         gameOverPanel.SetActive(false); 
-        Time.timeScale = 0;       
+
+        GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);
+             
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //TODO set game over conditions
-        if(Input.GetKeyDown(KeyCode.G) && !isGameOver){
 
-            isGameOver = true;
 
-            StartCoroutine(GameOverSequence());
-
-        }
-
-        if(isGameOver){
-
-            //reset game
-            if(Input.GetKey(KeyCode.R)){
-                ReloadScene();
-            }
-
-            //quit game
-            if(Input.GetKeyDown(KeyCode.Q)){
-                QuitGame();
-            }
-
-        }
+    void SetGameOver(){
+        isGameOver = true;
+        StartCoroutine(GameOverSequence());
     }
 
     public void StartGame(){
