@@ -21,4 +21,9 @@ public class GameManager : MonoBehaviour
         OnPlayerDeath.Invoke();
         Debug.LogError("You died");
     }
+
+    public void TriggerVictory()
+    {
+        Debug.LogError("Victory");
+    }
 }

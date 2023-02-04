@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             GameManager.Instance.TriggerPlayerDeath();
         }
+        if (col.GetComponent<VictoryTrigger>())
+        {
+            GameManager.Instance.TriggerVictory();
+        }
 
         var speedPickup = col.GetComponent<PickupTrigger>();
         if (speedPickup != null)
