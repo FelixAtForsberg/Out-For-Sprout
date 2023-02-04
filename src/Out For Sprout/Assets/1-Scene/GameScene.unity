@@ -1025,9 +1025,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 52817724452773985, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1229012462}
     - target: {fileID: 3208422814181162335, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
       propertyPath: m_Name
       value: GameOverOverlayCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208422814181162335, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3208422814181162403, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
       propertyPath: m_Pivot.x
