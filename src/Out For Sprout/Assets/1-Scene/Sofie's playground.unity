@@ -214,34 +214,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: obejctToSpawn
-      value: 
-      objectReference: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: Layers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: layers.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: Layers.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 163a77011a8044f4aa93666bd13ed165, type: 2}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: layers.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 163a77011a8044f4aa93666bd13ed165, type: 2}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: layers.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: e21d302851744fc4aa216ae46f1a9fb3, type: 2}
-    - target: {fileID: -3173590405382336111, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
-      propertyPath: minNeighbourDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1113674536297550929, guid: 6a3023be5c6a55241b488b74e4c2f8c6, type: 3}
       propertyPath: m_RootOrder
       value: 1

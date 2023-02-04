@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
-  m_Name: Dirt
+  m_Name: Sandstone
   m_EditorClassIdentifier: 
-  spawnLength: 20
-  obstacleSettings:
-  - ObjectToSpawn: {fileID: 862271878597069318, guid: 77a117ba74566dd4b9ba2b8c232600ed, type: 3}
-    nrOfSpawns: 3
-  - ObjectToSpawn: {fileID: 8981158750653315444, guid: ecdff87e4bcd7c046a9a59c8f50315a0, type: 3}
-    nrOfSpawns: 2
+  spawnLength: 5
+  obstacleSettings: []

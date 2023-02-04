@@ -7,9 +7,6 @@ using UnityEngine;
 public class WorldLayer : ScriptableObject
 {
     public float spawnLength;   
-    [SerializeField] public Vector2 minPosition;
-    [SerializeField] public Vector2 maxPosition;
-
     public List<ObstacleSpawnSettings> obstacleSettings;
     
     
