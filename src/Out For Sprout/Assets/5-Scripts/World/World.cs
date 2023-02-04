@@ -21,4 +21,22 @@ public class World : MonoBehaviour
     {
         return worldLayers;
     }
+
+    public (int, float) GetLayerIndexAndProgress(float checkDepth)
+    {
+        var layerEndDepth = 0;
+        for (int index = 0; index < worldLayers.Count; index++)
+        {
+            var start = layerEndDepth;
+            var layerLength = worldLayers[index].spawnLength;
+            layerEndDepth += layerLength;
+            if (checkDepth > layerEndDepth)
+            {
+                var percentage = (start - checkDepth) / layerLength;
+                return (index, percentage);
+            }
+        }
+
+        return (worldLayers.Count - 1, 1.0f);
+    }
 }
