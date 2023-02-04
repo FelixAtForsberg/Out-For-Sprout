@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
@@ -7,14 +8,26 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float maxSpeedupMultiplierByPlayerVelocity;
     [SerializeField] [Range(0, 1)] private float nonSpeedupAreaPercentage = 0.5f;
     [SerializeField] AnimationCurve catchUpCurve;
-
+    
+    
     private Camera camera;
 
     private void Awake()
     {
         camera = GetComponent<Camera>();
     }
-    
+
+    private void Start()
+    {
+        GameManager.Instance.OnPlayerWin.AddListener(DisableMovement);
+        GameManager.Instance.OnPlayerDeath.AddListener(DisableMovement);
+    }
+
+    private void DisableMovement()
+    {
+        enabled = false;
+    }
+
     private void Update()
     {
         MoveCameraByBaseSpeed();
