@@ -4,7 +4,6 @@ using UnityEngine;
 namespace _5_Scripts.Player
 {
     [RequireComponent(typeof(LineRenderer))]
-    [RequireComponent(typeof(EdgeCollider2D))]
     public class TrailWithCollision : MonoBehaviour
     {
         public float newPointDelta = 0.1f;
