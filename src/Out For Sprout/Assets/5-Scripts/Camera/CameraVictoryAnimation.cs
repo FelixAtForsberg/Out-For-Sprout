@@ -39,6 +39,7 @@ public class CameraVictoryAnimation : MonoBehaviour
         while (true)
         {
             transform.position = Vector3.Lerp(transform.position, victoryPositionReference.transform.position, 0.9f * Time.unscaledDeltaTime);
+            yield return null;
         }
     }
 }
