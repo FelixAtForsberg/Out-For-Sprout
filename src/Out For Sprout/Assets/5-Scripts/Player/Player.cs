@@ -17,4 +17,13 @@ public class Player : MonoBehaviour
             PlayerTracker.Instance.DeregisterPlayer(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.GetComponent<DeathTrigger>())
+        {
+            Destroy(gameObject);
+            GameManager.Instance.TriggerPlayerDeath();
+        }
+    }
 }

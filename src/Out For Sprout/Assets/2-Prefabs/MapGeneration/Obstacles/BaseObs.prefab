@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6933186026906588132}
   - component: {fileID: 9095840586612419978}
   - component: {fileID: 471146347930131741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseObs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
