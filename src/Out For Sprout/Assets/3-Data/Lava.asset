@@ -17,7 +17,7 @@ MonoBehaviour:
   - ObjectToSpawn: {fileID: 8753440437304191651, guid: 749a71eaef1204f418a78b77d6656c0c, type: 3}
     nrOfSpawns: 3
   - ObjectToSpawn: {fileID: 5571422680404953583, guid: d9432206479a9204489a5f5de38d667f, type: 3}
-    nrOfSpawns: 5
+    nrOfSpawns: 4
   - ObjectToSpawn: {fileID: 4524463163620853041, guid: c1c2e8d4b8112e34392f0bd2ebd3228b, type: 3}
-    nrOfSpawns: 6
-backgroundTile: {fileID: 11400000, guid: 85936abbb51a52d4fb89bd7373282990, type: 2}
+    nrOfSpawns: 5
+  backgroundTile: {fileID: 11400000, guid: 85936abbb51a52d4fb89bd7373282990, type: 2}
