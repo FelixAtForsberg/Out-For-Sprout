@@ -5,9 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField]float minNeighbourDistance;
-
     
-    [SerializeField] public List<WorldLayer> layers;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +14,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnWorld()
     {
-        var startYPosition = 0f;
+        var startYPosition = 0;
+        var layers = World.Instance.GetWorldLayers();
         foreach(var layer in layers)
         {
             SpawnLayer(layer, startYPosition);
