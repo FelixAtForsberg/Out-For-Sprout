@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
+  spawnLength: 10
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
+  obstacleSettings:
+  - ObjectToSpawn: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
+    nrOfSpawns: 10

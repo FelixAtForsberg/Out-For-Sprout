@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c314cf747fc54eb9c97596a228038, type: 3}
   m_Name: Dirt
   m_EditorClassIdentifier: 
-  spawnLenght: 10
+  spawnLength: 10
   minPosition: {x: 0, y: 0}
   maxPosition: {x: 100, y: 100}
   obstacleSettings:
