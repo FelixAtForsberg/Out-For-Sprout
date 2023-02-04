@@ -1,7 +1,15 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private PlayerMovement playerMovement;
+
+    private void Awake()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
     private void OnEnable()
     {
         if (PlayerTracker.Instance != null)
@@ -24,6 +32,12 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.Instance.TriggerPlayerDeath();
+        }
+
+        var speedPickup = col.GetComponent<PickupTrigger>();
+        if (speedPickup != null)
+        {
+            speedPickup.TriggerPickup(this);
         }
     }
 }
