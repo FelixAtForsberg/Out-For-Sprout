@@ -6,6 +6,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     [SerializeField] private float maxSpeedupMultiplierByPlayerVelocity;
     [SerializeField] [Range(0, 1)] private float nonSpeedupAreaPercentage = 0.5f;
+    [SerializeField] AnimationCurve catchUpCurve;
 
     private Camera camera;
 
@@ -81,11 +82,12 @@ public class CameraMovement : MonoBehaviour
         // TODO get map height
         var mapHeight = 10.0f;
         var speedupRange = mapHeight * (1.0f - nonSpeedupAreaPercentage);
-        var alphaDistance = (speedupStartWorldPos - playerYPos) / speedupRange;
+        var catchUpDistancePercentage = (speedupStartWorldPos - playerYPos) / speedupRange;
 
         var playerSpeed = furthestPlayer.GetComponent<Rigidbody2D>().velocity.magnitude;
         var maxCameraSpeed = maxSpeedupMultiplierByPlayerVelocity * playerSpeed;
-        var catchUpSpeed = Mathf.Lerp(0, maxCameraSpeed, alphaDistance);
+        var speedAlpha = catchUpCurve.Evaluate(catchUpDistancePercentage);
+        var catchUpSpeed = Mathf.Lerp(0, maxCameraSpeed, speedAlpha);
         transform.position += Vector3.down * Time.deltaTime * catchUpSpeed;
     }
 }
