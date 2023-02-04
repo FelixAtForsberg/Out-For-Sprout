@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.velocity = Vector2.down * baseVelocity;
         lastDirection = rigidbody.velocity.normalized;
+        GameManager.Instance.OnPlayerWin.AddListener(DisableMovement);
+    }
+
+    private void DisableMovement()
+    {
+        enabled = false;
     }
 
     private void OnEnable()
