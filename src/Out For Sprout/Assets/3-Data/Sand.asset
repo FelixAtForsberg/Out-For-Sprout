@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   spawnLength: 10
-  minPosition: {x: 0, y: 0}
-  maxPosition: {x: 0, y: 0}
   obstacleSettings:
   - ObjectToSpawn: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
     nrOfSpawns: 10
+  backgroundTile: {fileID: 11400000, guid: 148de93f174a1864cafa87d6d983a73e, type: 2}

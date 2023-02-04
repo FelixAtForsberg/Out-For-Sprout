@@ -16,3 +16,4 @@ MonoBehaviour:
   obstacleSettings:
   - ObjectToSpawn: {fileID: 391524969245939909, guid: fba59096a3c676e4a92c97e7588fb264, type: 3}
     nrOfSpawns: 5
+  backgroundTile: {fileID: 11400000, guid: b2199932c1e11664fb13cf7ff6b09ca5, type: 2}
