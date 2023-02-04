@@ -430,6 +430,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
+      propertyPath: joyStick
+      value: 
+      objectReference: {fileID: 2141697796}
+    - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 488631631}
@@ -1269,6 +1273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f684454fda940144a64789d8692942e, type: 3}
+--- !u!1 &2141697796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8799527984449136265, guid: 1487faf98c230c341a2884bf46bede53, type: 3}
+  m_PrefabInstance: {fileID: 956854805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6148112061463692929
 PrefabInstance:
   m_ObjectHideFlags: 0

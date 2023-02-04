@@ -8,15 +8,18 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject joyStick;
 
     private bool isGameOver = false;
     
     void Awake(){
         Time.timeScale = 0; 
+        
     }
     void Start()
     {
-        gameOverPanel.SetActive(false); 
+        gameOverPanel.SetActive(false);
+        joyStick.SetActive(false);
 
         GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);
              
@@ -25,12 +28,13 @@ public class UIManager : MonoBehaviour
 
 
     void SetGameOver(){
-        isGameOver = true;
+        
         StartCoroutine(GameOverSequence());
     }
 
     public void StartGame(){
-        Time.timeScale = 1;   
+        Time.timeScale = 1; 
+        joyStick.SetActive(true); 
     }
 
     public void ReloadScene(){
