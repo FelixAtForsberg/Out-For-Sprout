@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _5_Scripts.Player
+namespace _5_Scripts.Trail
 {
     [RequireComponent(typeof(LineRenderer))]
     public class TrailWithCollision : MonoBehaviour
     {
         public float newPointDelta = 0.1f;
-        public float collisionRadius = .1f;
+        public float trailCollisionRadius = .1f;
+        [Tooltip("Overrides the Line Renderer's Radius on Start()")]
         public float trailRenderRadius = 0.1f;
+
+        public bool DebugLogOnPoint;
+        
+        public Vector3 createPointOffset;
 
         private float _newPointDeltaSqr;
         
@@ -34,13 +39,17 @@ namespace _5_Scripts.Player
             InitLineRenderer();
             InitEdgeCollider();
 
-            AddTrailPoint(transform.position);
+            AddTrailPoint(NewPointPosition());
         }
+
+        private Vector3 NewPointPosition() => transform.position + createPointOffset;
 
         private void InitLineRenderer()
         {
             _curPointCount = 0;
             _rootRenderPoints = new Vector3[8192];
+
+            _lineRenderer.widthMultiplier = trailRenderRadius;
         }
         
         // initializes the point list and creates a world relative GameObject
@@ -49,11 +58,13 @@ namespace _5_Scripts.Player
         private void InitEdgeCollider()
         {
             _trailColliderList = new List<Vector2>();
+            
             _worldRelativeEmpty = new GameObject("Trail Collider");
             _edgeCollider = _worldRelativeEmpty.AddComponent<EdgeCollider2D>();
+            _edgeCollider.edgeRadius = trailCollisionRadius;
             _worldRelativeEmpty.AddComponent<TrailCollisionHandler>();
         }
-        
+
         // Faster than Unity's .distance()
         private float SqrDist(Vector3 a, Vector3 b)
         {
@@ -66,6 +77,7 @@ namespace _5_Scripts.Player
         private void AddTrailPoint(Vector3 pointPos)
         {
             _lastPointPos = pointPos;
+            if (DebugLogOnPoint) Debug.Log($"LastPoint: {_lastPointPos}\nNewPoint:{pointPos}");
             _curPointCount++;
 
             _rootRenderPoints[_curPointCount] = pointPos;
@@ -92,10 +104,11 @@ namespace _5_Scripts.Player
         // Update is called once per frame
         private void FixedUpdate()
         {
-            if (LastPointFurtherThanDelta)
-            {
-                AddTrailPoint(transform.position);
-            }
+            // if (LastPointFurtherThanDelta)
+            AddTrailPoint(NewPointPosition());
+                // else
+            // Debug.Log("No new Point");
+            
 
         }
     }
