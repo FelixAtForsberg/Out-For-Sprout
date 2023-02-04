@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public UnityEvent OnPlayerDeath = new UnityEvent();
-
+    public UnityEvent OnPlayerWin = new UnityEvent();
     private void Awake()
     {
         if (Instance != null)
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void TriggerVictory()
     {
+        OnPlayerWin.Invoke();
         Debug.LogError("Victory");
     }
 }
