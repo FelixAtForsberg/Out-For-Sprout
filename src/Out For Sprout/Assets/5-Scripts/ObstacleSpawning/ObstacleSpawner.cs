@@ -60,7 +60,7 @@ public class ObstacleSpawner : MonoBehaviour
     private Vector2 GetRandomSpawnPosForLayer(float startY, float endY)
     {
         // TODO add game width
-        var mapWidth = 5;
+        var mapWidth = 10;
         var halfWidth = mapWidth * 0.5f; 
         return new Vector2(Random.Range(-halfWidth, halfWidth), Random.Range(startY, endY));
     }
