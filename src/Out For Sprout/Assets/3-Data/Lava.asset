@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Lava
   m_EditorClassIdentifier: 
   spawnLength: 10
-  obstacleSettings: []
+  obstacleSettings:
+  - ObjectToSpawn: {fileID: 8981158750653315444, guid: ecdff87e4bcd7c046a9a59c8f50315a0, type: 3}
+    nrOfSpawns: 6

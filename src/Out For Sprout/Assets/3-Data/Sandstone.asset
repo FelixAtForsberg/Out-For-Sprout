@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Sandstone
   m_EditorClassIdentifier: 
   spawnLength: 5
-  obstacleSettings: []
+  obstacleSettings:
+  - ObjectToSpawn: {fileID: 862271878597069318, guid: 77a117ba74566dd4b9ba2b8c232600ed, type: 3}
+    nrOfSpawns: 4
