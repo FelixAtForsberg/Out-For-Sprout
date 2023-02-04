@@ -9,7 +9,7 @@ public class CameraVictoryAnimation : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.OnPlayerDeath.AddListener(PlayAnimation);
+        GameManager.Instance.OnPlayerWin.AddListener(PlayAnimation);
     }
 
     public void PlayAnimation()
