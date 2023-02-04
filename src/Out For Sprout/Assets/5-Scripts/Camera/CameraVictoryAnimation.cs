@@ -36,9 +36,11 @@ public class CameraVictoryAnimation : MonoBehaviour
     
     private IEnumerator PanToEndPoint()
     {
+        var victoryTransformReference = victoryPositionReference.transform.position.y;
+        var finalPosition = new Vector3(transform.position.x, victoryTransformReference, transform.position.z);
         while (true)
         {
-            transform.position = Vector3.Lerp(transform.position, victoryPositionReference.transform.position, 0.9f * Time.unscaledDeltaTime);
+            transform.position = Vector3.Lerp(transform.position, finalPosition, 0.9f * Time.unscaledDeltaTime);
             yield return null;
         }
     }
