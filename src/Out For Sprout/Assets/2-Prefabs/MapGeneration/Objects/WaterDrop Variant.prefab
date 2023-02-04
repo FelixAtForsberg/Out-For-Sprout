@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 471146347930131741, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2155707092157983700, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
       propertyPath: m_Name
       value: WaterDrop Variant
@@ -73,3 +77,23 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ffba1902b30f4ee45a7bf522d077157d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+--- !u!1 &7900933459901592044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2155707092157983700, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+  m_PrefabInstance: {fileID: 8092789529648519736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8347014978782747477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900933459901592044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e799959c7dc073246ab93c45c2b4ba62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 1
+  speedBonus: 5
+  bonusTime: 5
