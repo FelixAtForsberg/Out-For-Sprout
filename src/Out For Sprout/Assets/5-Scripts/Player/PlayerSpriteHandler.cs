@@ -11,10 +11,10 @@ namespace _5_Scripts.Player
         [SerializeField] public Sprite FaceSunglasses;
         [SerializeField] public Sprite FaceSweaty;
 
-        void SetFaceSad() => faceSpriteRenderer.sprite = FaceSad;
-        void SetFaceHappy() => faceSpriteRenderer.sprite = FaceHappy;
-        void SetFaceSunglasses() => faceSpriteRenderer.sprite = FaceSunglasses;
-        void SetFaceSweaty() => faceSpriteRenderer.sprite = FaceSweaty;
+        public void SetFaceSad() => faceSpriteRenderer.sprite = FaceSad;
+        public void SetFaceHappy() => faceSpriteRenderer.sprite = FaceHappy;
+        public void SetFaceSunglasses() => faceSpriteRenderer.sprite = FaceSunglasses;
+        public void SetFaceSweaty() => faceSpriteRenderer.sprite = FaceSweaty;
     
         // Start is called before the first frame update
         void Start()
