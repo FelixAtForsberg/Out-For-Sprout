@@ -8,9 +8,14 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject joyStick;
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private Sprite pauseSprite;
+    [SerializeField] private Sprite playSprite;
 
     private bool isGameOver = false;
+    private bool isPaused = false;
     
     void Awake(){
         Time.timeScale = 0; 
@@ -44,7 +49,23 @@ public class UIManager : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }
-   
+
+    public void PauseResumeGame(){
+        if (isPaused){
+            Time.timeScale = 1;
+            pausePanel.SetActive(false);
+            joyStick.SetActive(true);
+            pauseButton.GetComponent<Image>().sprite = pauseSprite;
+            isPaused = false;
+        }else{
+            Time.timeScale = 0;
+            pausePanel.SetActive(true);
+            joyStick.SetActive(false);
+            pauseButton.GetComponent<Image>().sprite = playSprite;
+            isPaused = true;
+        }
+    }
+
 
     private IEnumerator GameOverSequence(){
         gameOverPanel.SetActive(true);
