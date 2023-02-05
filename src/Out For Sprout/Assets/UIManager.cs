@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
 
     void SetWin(){
         Time.timeScale = 0;
-        winPanel.SetActive(false);
+        winPanel.SetActive(true);
         joyStick.SetActive(false);
         progressPanel.SetActive(false);
 
