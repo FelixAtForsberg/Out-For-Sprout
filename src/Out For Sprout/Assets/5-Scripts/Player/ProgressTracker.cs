@@ -7,6 +7,7 @@ public class ProgressTracker : MonoBehaviour
     private float furthestDepth;
     private int furthestLayerIndex;
     private float layerPercentage;
+    private float totalProgressPercentage;
 
     private void Awake()
     {
@@ -33,6 +34,14 @@ public class ProgressTracker : MonoBehaviour
             furthestDepth = Mathf.Min(posY, furthestDepth);
         }
 
-        (furthestLayerIndex, layerPercentage) = World.Instance.GetLayerIndexAndProgress(furthestDepth);
+        var data = World.Instance.GetLayerIndexAndProgress(furthestDepth);
+        furthestLayerIndex = data.layerIndex;
+        layerPercentage = data.layerPercentage;
+        totalProgressPercentage = data.fullPercentage;
+    }
+
+    public float GetFullProgressPercentage()
+    {
+        return totalProgressPercentage;
     }
 }

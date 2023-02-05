@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Vector2 lastDirection;
 
-    public float baseVelocity;
+    [SerializeField] private AnimationCurve speedCurveByPercentageOfMap;
 
     private List<SpeedBuff> activeBuffs = new List<SpeedBuff>();
 
@@ -31,9 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rigidbody.velocity = Vector2.down * baseVelocity;
+        rigidbody.velocity = Vector2.down * GetSpeedForProgress();
         lastDirection = rigidbody.velocity.normalized;
         GameManager.Instance.OnPlayerWin.AddListener(DisableMovement);
+    }
+
+    private float GetSpeedForProgress()
+    {
+        var progressPercentage = ProgressTracker.Instance.GetFullProgressPercentage();
+        return speedCurveByPercentageOfMap.Evaluate(progressPercentage);
     }
 
     private void DisableMovement()
@@ -77,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         var inputDirection = gameActions.Player.Move.ReadValue<Vector2>();
         var getSpeedBonus = GetSpeedBonusByBuffs();
         
-        var newVelocity = baseVelocity + getSpeedBonus;
+        var newVelocity = GetSpeedForProgress() + getSpeedBonus;
 
         var finalDirection = lastDirection;
         if (inputDirection.magnitude > 0)
