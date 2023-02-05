@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private float cameraSpeed;
+    [SerializeField] private AnimationCurve speedCurveByPercentageOfMap;
     [SerializeField] private float maxSpeedupMultiplierByPlayerVelocity;
     [SerializeField] [Range(0, 1)] private float nonSpeedupAreaPercentage = 0.5f;
     [SerializeField] AnimationCurve catchUpCurve;
@@ -36,7 +36,13 @@ public class CameraMovement : MonoBehaviour
 
     private void MoveCameraByBaseSpeed()
     {
-        transform.position += Vector3.down * Time.deltaTime * cameraSpeed;
+        transform.position += Vector3.down * Time.deltaTime * GetSpeedForProgress();
+    }
+    
+    private float GetSpeedForProgress()
+    {
+        var progressPercentage = ProgressTracker.Instance.GetFullProgressPercentage();
+        return speedCurveByPercentageOfMap.Evaluate(progressPercentage);
     }
     
     private void CatchUpToPlayer()
