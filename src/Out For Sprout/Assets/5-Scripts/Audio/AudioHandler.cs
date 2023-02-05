@@ -22,10 +22,33 @@ public class AudioHandler : MonoBehaviour
     public FMOD_Instantiator gameOver;
     public FMOD_Instantiator start;
     public FMOD_Instantiator water;
-    
+
+    public FMOD_Instantiator backgroundSound;
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.OnGameStart.AddListener(OnGameStart);
+        GameManager.Instance.OnPlayerWin.AddListener(OnPlayerWin);
+        GameManager.Instance.OnNewLayer.AddListener(OnNewLayer);
+    }
+
+    private void OnNewLayer(int layer)
+    {
+        backgroundSound.setParam("Progression", layer + 1);
+    }
+
+    private void OnPlayerWin()
+    {
+        backgroundSound.setParam("Progression", 7);
+    }
+
+    private void OnGameStart()
+    {
+        backgroundSound.setParam("Progression", 1);
     }
 
     public void Play(AudioPlayType waterType)
