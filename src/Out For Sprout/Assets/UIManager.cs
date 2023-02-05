@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1; 
         joyStick.SetActive(true);
         progressPanel.SetActive(true);
+        GameManager.Instance.StartGame();
     }
 
     public void ReloadScene(){
