@@ -280,7 +280,7 @@ MonoBehaviour:
   newPointDelta: 0.01
   trailCollisionRadius: 0.05
   trailRenderRadius: 0.3
-  DebugLogOnPoint: 1
+  DebugLogOnPoint: 0
   createPointOffset: {x: 0, y: 0.2, z: -0.1}
 --- !u!114 &4912652553017661099
 MonoBehaviour:
@@ -295,10 +295,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceSpriteRenderer: {fileID: 4532860495707736981}
+  rootEndRenderer: {fileID: 4954839854183057730}
   FaceSad: {fileID: 21300000, guid: faadbe61bbaa2ed45a3fbb711a1b5558, type: 3}
   FaceHappy: {fileID: 21300000, guid: 1f53040cfa28ac942bb46f886c665e8e, type: 3}
   FaceSunglasses: {fileID: 21300000, guid: f49c0a7463e26d2499def2f5ad8a8997, type: 3}
   FaceSweaty: {fileID: 21300000, guid: 80f783317132ac54a93d5745bfe5ea9b, type: 3}
+  RootEndFrame1: {fileID: 21300000, guid: 0022b84d4ebee244ead0974d126f8e4b, type: 3}
+  RootEndFrame2: {fileID: 21300000, guid: 745242dc92bc4f840a3457ba3145efe0, type: 3}
+  RootEndFrame3: {fileID: 21300000, guid: a2f7e1dd4ef029b4bbe3b7ffc38ecbc9, type: 3}
+  rootHoldTime: 5
 --- !u!1 &2231833479148188568
 GameObject:
   m_ObjectHideFlags: 0

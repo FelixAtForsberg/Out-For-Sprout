@@ -15,17 +15,17 @@ namespace _5_Scripts.Player
         public void SetFaceHappy() => faceSpriteRenderer.sprite = FaceHappy;
         public void SetFaceSunglasses() => faceSpriteRenderer.sprite = FaceSunglasses;
         public void SetFaceSweaty() => faceSpriteRenderer.sprite = FaceSweaty;
-    
+
         // Start is called before the first frame update
         void Start()
         {
-        
+
         }
 
         // Update is called once per frame
         void Update()
         {
-        
+
         }
     }
 }
