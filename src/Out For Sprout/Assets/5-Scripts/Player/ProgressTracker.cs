@@ -27,12 +27,9 @@ public class ProgressTracker : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    public string GetTimer(){
+    public float GetTimer(){
 
-        int minutes = Mathf.FloorToInt(timer / 60F);
-        int seconds = Mathf.FloorToInt(timer - minutes * 60);
-        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
-        return time;
+        return timer;
     }
 
     private void TrackProgress()

@@ -16,11 +16,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private Sprite pauseSprite;
     [SerializeField] private Sprite playSprite;
-    [SerializeField] private TextMeshPro score;
-    [SerializeField] private TextMeshPro bestScore;
+    [SerializeField] private GameObject score;
+    [SerializeField] private GameObject bestScore;
 
 
-    private bool isGameOver = false;
+    //private bool isGameOver = false;
     private bool isPaused = false;
     
     void Awake(){
@@ -32,18 +32,62 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         joyStick.SetActive(false);
         winPanel.SetActive(false);
+
+
+        GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);    
+        GameManager.Instance.OnPlayerWin.AddListener(SetWin);      
+    
+
         pausePanel.SetActive(false);
         progressPanel.SetActive(false);
         GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);             
+
     }
 
+    void Update(){
 
+        if(Input.GetKeyDown(KeyCode.A)){
+
+            SetWin();
+        }
+    }
 
     void SetGameOver(){
         
-        //Debug.Log(ProgressTracker.Instance.GetTimer());
         StartCoroutine(GameOverSequence());
         
+    }
+
+    void SetWin(){
+        Time.timeScale = 0;
+        winPanel.SetActive(true);
+
+
+        float timer = ProgressTracker.Instance.GetTimer();
+        score.GetComponent<TMP_Text>().text = Timeformat(timer);
+
+        
+        float bestFloat = PlayerPrefs.GetFloat("myFloat", float.MaxValue);
+        if(bestFloat >= float.MaxValue){
+            bestScore.GetComponent<TMP_Text>().text = "";
+        }
+        if(bestFloat>timer){
+            
+            PlayerPrefs.SetFloat("myFloat", timer);
+            bestScore.GetComponent<TMP_Text>().text = Timeformat(timer);
+        }
+        if(bestFloat<timer){
+            bestScore.GetComponent<TMP_Text>().text = Timeformat(bestFloat);
+
+        }        
+
+    }
+
+    private string Timeformat(float timer){
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
+        return time;
     }
 
     public void StartGame(){
@@ -79,8 +123,10 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator GameOverSequence(){
         gameOverPanel.SetActive(true);
+
         progressPanel.SetActive(false);
         joyStick.SetActive(false);
+
 
 
         Time.timeScale = 0;
