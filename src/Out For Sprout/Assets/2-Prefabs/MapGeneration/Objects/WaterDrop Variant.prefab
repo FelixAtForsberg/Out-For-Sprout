@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -43210433737738047, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
+      propertyPath: audioType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 471146347930131741, guid: e5fc69f715b96584084c8e0967fcfe4d, type: 3}
       propertyPath: m_Radius
       value: 1.93
