@@ -5,7 +5,7 @@ public class World : MonoBehaviour
 {
     public static World Instance;
     [SerializeField] private List<WorldLayer> worldLayers;
-    
+    private float fullLength;
     private void Awake()
     {
         if (Instance != null)
@@ -15,6 +15,18 @@ public class World : MonoBehaviour
             return;
         }
         Instance = this;
+        fullLength = CalculateFullLength();
+    }
+
+    private float CalculateFullLength()
+    {
+        var length = 0;
+        foreach (var layer in worldLayers)
+        {
+            length += layer.spawnLength;
+        }
+
+        return length;
     }
 
     public List<WorldLayer> GetWorldLayers()
@@ -22,21 +34,38 @@ public class World : MonoBehaviour
         return worldLayers;
     }
 
-    public (int, float) GetLayerIndexAndProgress(float checkDepth)
+    public struct ProgressData
+    {
+        public int layerIndex;
+        public float layerPercentage;
+        public float fullPercentage;
+    }
+    
+    public ProgressData GetLayerIndexAndProgress(float checkDepth)
     {
         var layerEndDepth = 0;
         for (int index = 0; index < worldLayers.Count; index++)
         {
             var start = layerEndDepth;
             var layerLength = worldLayers[index].spawnLength;
-            layerEndDepth += layerLength;
+            layerEndDepth -= layerLength;
             if (checkDepth > layerEndDepth)
             {
                 var percentage = (start - checkDepth) / layerLength;
-                return (index, percentage);
+                var totalPercentage = checkDepth / -fullLength;
+                return new ProgressData()
+                {
+                    layerIndex = index,
+                    layerPercentage = percentage,
+                    fullPercentage = totalPercentage
+                };
             }
         }
 
-        return (worldLayers.Count - 1, 1.0f);
+        return new ProgressData(){
+            layerIndex = worldLayers.Count - 1, 
+            layerPercentage = 1.0f,
+            fullPercentage = 1.0f
+        };
     }
 }
