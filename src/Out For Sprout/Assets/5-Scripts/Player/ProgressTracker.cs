@@ -7,6 +7,8 @@ public class ProgressTracker : MonoBehaviour
     private float furthestDepth;
     private int furthestLayerIndex;
     private float layerPercentage;
+    private float totalProgressPercentage;
+    private float timer;
 
     private void Awake()
     {
@@ -22,6 +24,15 @@ public class ProgressTracker : MonoBehaviour
     private void Update()
     {
         TrackProgress();
+        timer += Time.deltaTime;
+    }
+
+    public string GetTimer(){
+
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
+        return time;
     }
 
     private void TrackProgress()
@@ -33,6 +44,14 @@ public class ProgressTracker : MonoBehaviour
             furthestDepth = Mathf.Min(posY, furthestDepth);
         }
 
-        (furthestLayerIndex, layerPercentage) = World.Instance.GetLayerIndexAndProgress(furthestDepth);
+        var data = World.Instance.GetLayerIndexAndProgress(furthestDepth);
+        furthestLayerIndex = data.layerIndex;
+        layerPercentage = data.layerPercentage;
+        totalProgressPercentage = data.fullPercentage;
+    }
+
+    public float GetFullProgressPercentage()
+    {
+        return totalProgressPercentage;
     }
 }

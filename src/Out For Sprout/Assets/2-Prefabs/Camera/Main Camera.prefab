@@ -496,7 +496,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379fa2ec36c926947989e7b29ab46c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 2
+  speedCurveByPercentageOfMap:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: 12
+      outSlope: 12
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 8
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2
+      inSlope: -12
+      outSlope: -12
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxSpeedupMultiplierByPlayerVelocity: 2
   nonSpeedupAreaPercentage: 0.5
   catchUpCurve:
@@ -560,3 +592,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  victoryPositionReference: {fileID: 0}
