@@ -12,8 +12,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject progressPanel;
+    [SerializeField] private GameObject inputCanvas;
     [SerializeField] private GameObject joyStick;
     [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject startQuitButton;
     [SerializeField] private Sprite pauseSprite;
     [SerializeField] private Sprite playSprite;
     [SerializeField] private GameObject score;
@@ -30,7 +32,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gameOverPanel.SetActive(false);
-        joyStick.SetActive(false);
+        inputCanvas.SetActive(false);
         winPanel.SetActive(false);
 
 
@@ -59,8 +61,8 @@ public class UIManager : MonoBehaviour
     }
 
     void SetWin(){
-        
-        joyStick.SetActive(false);
+
+        inputCanvas.SetActive(false);
         progressPanel.SetActive(false);
         StartCoroutine(WinSequence());      
 
@@ -97,9 +99,10 @@ public class UIManager : MonoBehaviour
     }
 
     public void StartGame(){
-        Time.timeScale = 1; 
-        joyStick.SetActive(true);
+        Time.timeScale = 1;
+        inputCanvas.SetActive(true);
         progressPanel.SetActive(true);
+        startQuitButton.SetActive(false);
         GameManager.Instance.StartGame();
     }
 
@@ -132,7 +135,7 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
 
         progressPanel.SetActive(false);
-        joyStick.SetActive(false);
+        inputCanvas.SetActive(false);
 
 
 

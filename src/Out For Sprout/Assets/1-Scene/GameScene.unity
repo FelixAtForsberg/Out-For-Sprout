@@ -196,6 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89df5891b0f34a240acb40f4ff741c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &157548355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4558415457490538043, guid: b21226b4c7f648f42b8c13479239a939, type: 3}
+  m_PrefabInstance: {fileID: 876659005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &228969478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: joyStick
       value: 
-      objectReference: {fileID: 1059529799}
+      objectReference: {fileID: 1869585991}
     - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: winPanel
       value: 
@@ -496,6 +501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0ff9ab4e9689c61449f0fc006701019a, type: 3}
     - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
+      propertyPath: inputCanvas
+      value: 
+      objectReference: {fileID: 1059529799}
+    - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: pauseButton
       value: 
       objectReference: {fileID: 2054691028}
@@ -511,6 +520,10 @@ PrefabInstance:
       propertyPath: progressPanel
       value: 
       objectReference: {fileID: 1447865627}
+    - target: {fileID: 6452290401743854625, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
+      propertyPath: startQuitButton
+      value: 
+      objectReference: {fileID: 973201122}
     - target: {fileID: 6452290401743854626, guid: d6e56241627a9884bb72ec1a97550d74, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -712,6 +725,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8704062345438929611, guid: b21226b4c7f648f42b8c13479239a939, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 157548355}
     - target: {fileID: 8704062345438929611, guid: b21226b4c7f648f42b8c13479239a939, type: 3}
       propertyPath: progressBarImage
       value: 
@@ -977,6 +994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1487faf98c230c341a2884bf46bede53, type: 3}
+--- !u!1 &973201122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3874475709023474759, guid: ffb2a5072167c2145a671d74413d1139, type: 3}
+  m_PrefabInstance: {fileID: 1483406177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059529799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8799527984449136265, guid: 1487faf98c230c341a2884bf46bede53, type: 3}
@@ -1208,6 +1230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartOverlayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5900883823849594970, guid: ffb2a5072167c2145a671d74413d1139, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5900883823849594971, guid: ffb2a5072167c2145a671d74413d1139, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1390,6 +1416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f9958a9cb78bb4288386bbb36cd5a0, type: 3}
+--- !u!1 &1869585991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8799527983491430185, guid: 1487faf98c230c341a2884bf46bede53, type: 3}
+  m_PrefabInstance: {fileID: 956854805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1933840116
 PrefabInstance:
   m_ObjectHideFlags: 0
