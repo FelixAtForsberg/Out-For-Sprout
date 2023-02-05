@@ -60,8 +60,9 @@ public class UIManager : MonoBehaviour
 
     void SetWin(){
         Time.timeScale = 0;
-        winPanel.SetActive(true);
-
+        winPanel.SetActive(false);
+        joyStick.SetActive(false);
+        progressPanel.SetActive(false);
 
         float timer = ProgressTracker.Instance.GetTimer();
         score.GetComponent<TMP_Text>().text = Timeformat(timer);
