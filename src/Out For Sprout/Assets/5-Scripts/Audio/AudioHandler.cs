@@ -34,6 +34,12 @@ public class AudioHandler : MonoBehaviour
         GameManager.Instance.OnGameStart.AddListener(OnGameStart);
         GameManager.Instance.OnPlayerWin.AddListener(OnPlayerWin);
         GameManager.Instance.OnNewLayer.AddListener(OnNewLayer);
+        GameManager.Instance.OnPlayerDeath.AddListener(OnPlayerDeath);
+    }
+
+    private void OnPlayerDeath()
+    {
+        Play(AudioPlayType.GameOver);
     }
 
     private void OnNewLayer(int layer)
@@ -49,6 +55,7 @@ public class AudioHandler : MonoBehaviour
     private void OnGameStart()
     {
         backgroundSound.setParam("Progression", 1);
+        Play(AudioPlayType.Start);
     }
 
     public void Play(AudioPlayType waterType)
