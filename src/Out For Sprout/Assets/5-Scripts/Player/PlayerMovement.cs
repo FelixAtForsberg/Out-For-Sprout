@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     private void DisableMovement()
     {
         enabled = false;
+        rigidbody.velocity = Vector2.zero;
+        rigidbody.isKinematic = true;
     }
 
     private void OnEnable()
