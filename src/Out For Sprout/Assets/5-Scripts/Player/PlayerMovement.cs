@@ -19,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private GameActions gameActions;
     private Rigidbody2D rigidbody;
     private Vector2 lastDirection;
-
+    private Camera camera;
+    
     [SerializeField] private AnimationCurve speedCurveByPercentageOfMap;
+    [SerializeField] private FMOD_Instantiator rootSound;
+    [SerializeField] private float maxReferenceSpeedToSound;
 
     private List<SpeedBuff> activeBuffs = new List<SpeedBuff>();
     private List<SpeedBuff> activeDebuffs = new List<SpeedBuff>();
@@ -28,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        camera = Camera.main;
     }
 
     private void Start()
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateBuffs();
         UpdateMovingDirection();
+        UpdateSoundParams();
     }
 
     private void UpdateBuffs()
@@ -115,6 +120,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return totalSpeedBonus;
+    }
+    
+    private void UpdateSoundParams()
+    {
+        var viewHalfHeight = camera.orthographicSize;
+        var viewHalfWidth = camera.aspect * viewHalfHeight;
+        var panValue = Mathf.Clamp(transform.position.x / viewHalfWidth, -1f, 1f);
+        rootSound.setParam("MoveSpeed", Mathf.Clamp01(rigidbody.velocity.magnitude / maxReferenceSpeedToSound));
+        rootSound.setParam("Panning", panValue);
     }
 
     public void AddSpeedupBuff(float speedBonus, float fadeoutTime)
