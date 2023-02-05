@@ -59,10 +59,16 @@ public class UIManager : MonoBehaviour
     }
 
     void SetWin(){
-        Time.timeScale = 0;
-        winPanel.SetActive(true);
+        
+        joyStick.SetActive(false);
+        progressPanel.SetActive(false);
+        StartCoroutine(WinSequence());      
 
+        
 
+    }
+
+    void SetScore(){
         float timer = ProgressTracker.Instance.GetTimer();
         score.GetComponent<TMP_Text>().text = Timeformat(timer);
 
@@ -83,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private string Timeformat(float timer){
+    public static string Timeformat(float timer){
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string time = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -94,6 +100,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1; 
         joyStick.SetActive(true);
         progressPanel.SetActive(true);
+        GameManager.Instance.StartGame();
     }
 
     public void ReloadScene(){
@@ -132,6 +139,16 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSeconds(5.0f);
 
+    }
+
+    private IEnumerator WinSequence(){
+
+        
+        yield return new WaitForSeconds(5.0f);
+        Time.timeScale = 0;
+        SetScore();
+        winPanel.SetActive(true);
+        
     }
 
     

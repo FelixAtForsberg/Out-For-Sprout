@@ -4,10 +4,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private PlayerMovement playerMovement;
-
+    [SerializeField] private FMOD_Instantiator playerSound;
+    
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.OnGameStart.AddListener(OnGameStart);
+    }
+
+    private void OnGameStart()
+    {
+        playerSound.playEvent();
     }
 
     private void OnEnable()
@@ -30,11 +41,12 @@ public class Player : MonoBehaviour
     {
         if (col.GetComponent<DeathTrigger>())
         {
-            Destroy(gameObject);
+            playerSound.stopEventWithFade();
             GameManager.Instance.TriggerPlayerDeath();
         }
         if (col.GetComponent<VictoryTrigger>())
         {
+            playerSound.stopEventWithFade();
             GameManager.Instance.TriggerVictory();
         }
 

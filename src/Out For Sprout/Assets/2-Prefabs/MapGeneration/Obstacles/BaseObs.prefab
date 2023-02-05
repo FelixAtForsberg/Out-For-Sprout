@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6933186026906588132}
   - component: {fileID: 9095840586612419978}
   - component: {fileID: 471146347930131741}
+  - component: {fileID: -43210433737738047}
   m_Layer: 7
   m_Name: BaseObs
   m_TagString: Untagged
@@ -101,3 +102,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-43210433737738047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155707092157983700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52bfbfca87c548458f99c5c7f96bc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1

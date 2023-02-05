@@ -41,10 +41,16 @@ public class ProgressTracker : MonoBehaviour
             furthestDepth = Mathf.Min(posY, furthestDepth);
         }
 
+        var lastIndex = furthestLayerIndex;
         var data = World.Instance.GetLayerIndexAndProgress(furthestDepth);
         furthestLayerIndex = data.layerIndex;
         layerPercentage = data.layerPercentage;
         totalProgressPercentage = data.fullPercentage;
+
+        if (furthestLayerIndex != lastIndex)
+        {
+            GameManager.Instance.OnNewLayer.Invoke(furthestLayerIndex);
+        }
     }
 
     public float GetFullProgressPercentage()
