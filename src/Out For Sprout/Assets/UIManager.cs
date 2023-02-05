@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject joyStick;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private Sprite pauseSprite;
     [SerializeField] private Sprite playSprite;
+
 
     private bool isGameOver = false;
     private bool isPaused = false;
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         joyStick.SetActive(false);
+        winPanel.SetActive(false);
 
         GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);
              
