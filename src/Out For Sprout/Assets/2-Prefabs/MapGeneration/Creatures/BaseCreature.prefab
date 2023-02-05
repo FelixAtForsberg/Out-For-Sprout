@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e32eb0b3e6e15f419267f83347cefd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnTrigger: 0
-  speedSlowdown: 0
-  slowTime: 0
+  destroyOnTrigger: 1
+  speedSlowdown: 2
+  slowTime: 2
 --- !u!114 &-5659134479103097712
 MonoBehaviour:
   m_ObjectHideFlags: 0
