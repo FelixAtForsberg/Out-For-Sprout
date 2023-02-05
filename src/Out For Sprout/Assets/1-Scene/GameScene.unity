@@ -990,6 +990,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1688277245}
+    - target: {fileID: 8420047229682879116, guid: ffb2a5072167c2145a671d74413d1139, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 745721688}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb2a5072167c2145a671d74413d1139, type: 3}
 --- !u!1001 &1688277244
