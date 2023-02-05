@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private Sprite pauseSprite;
     [SerializeField] private Sprite playSprite;
+    [SerializeField] private TextMeshPro score;
+    [SerializeField] private TextMeshPro bestScore;
 
 
     private bool isGameOver = false;
