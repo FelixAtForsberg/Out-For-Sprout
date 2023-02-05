@@ -32,15 +32,16 @@ public class UIManager : MonoBehaviour
         joyStick.SetActive(false);
         winPanel.SetActive(false);
 
-        GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);
-             
+        GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);             
     }
 
 
 
     void SetGameOver(){
         
+        //Debug.Log(ProgressTracker.Instance.GetTimer());
         StartCoroutine(GameOverSequence());
+        
     }
 
     public void StartGame(){
@@ -75,6 +76,8 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator GameOverSequence(){
         gameOverPanel.SetActive(true);
+
+        
         Time.timeScale = 0;
         yield return new WaitForSeconds(5.0f);
 
