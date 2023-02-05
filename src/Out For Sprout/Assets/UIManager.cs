@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject progressPanel;
     [SerializeField] private GameObject joyStick;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private Sprite pauseSprite;
@@ -31,7 +32,8 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         joyStick.SetActive(false);
         winPanel.SetActive(false);
-
+        pausePanel.SetActive(false);
+        progressPanel.SetActive(false);
         GameManager.Instance.OnPlayerDeath.AddListener(SetGameOver);             
     }
 
@@ -46,7 +48,8 @@ public class UIManager : MonoBehaviour
 
     public void StartGame(){
         Time.timeScale = 1; 
-        joyStick.SetActive(true); 
+        joyStick.SetActive(true);
+        progressPanel.SetActive(true);
     }
 
     public void ReloadScene(){
@@ -76,8 +79,10 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator GameOverSequence(){
         gameOverPanel.SetActive(true);
+        progressPanel.SetActive(false);
+        joyStick.SetActive(false);
 
-        
+
         Time.timeScale = 0;
         yield return new WaitForSeconds(5.0f);
 
